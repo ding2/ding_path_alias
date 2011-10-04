@@ -48,7 +48,6 @@ function ding_path_alias_token_info() {
 function ding_path_alias_token_info_alter(&$info) {
   $info['tokens']['node']['ding_event_library']['type'] = 'og-field';
   $info['tokens']['node']['ding_news_library']['type'] = 'og-field';
-  dpm($info);
   return $info;
 }
 
@@ -88,4 +87,46 @@ function ding_path_alias_tokens($type, $tokens, array $data = array(), array $op
   return $replacements;
 }
 
+/**
+ * Implements hook_path_alias_types().
+ *
+ * Used primarily by the bulk delete form.
+ */
+function ding_path_alias_path_alias_types() {
+  $objects = array();
+  if (module_exists('ding_library') && module_exists('ding_news')) {
+    $objects['library/%/news'] = t('Library news pages');
+  }
+  return $objects;
+}
 
+/**
+ * Implements hook_pathauto().
+ */
+function ding_path_alias_pathauto($op) {
+  switch ($op) {
+    case 'settings':
+      /**
+       * Pathauto module isn't create with the kind of functionality we have in
+       * mind: Create a bunch of different path aliases with different url
+       * patterns. We need to create a setting for each pattern type we want to
+       * use as the batch callback needs to know what the internal url will be.
+       * Since pathauto will key the form items on the module value, we need to
+       * create a unique module defition per url pattern.
+       */
+      $settings = array();
+      if (module_exists('ding_library') && module_exists('ding_news')) {
+        $settings['library_front_page'] = (object) array(
+          'module' => 'ding_path_alias_library_news_page',
+          'token_type' => 'node',
+          'groupheader' => t('Library news page'),
+          'patterndescr' => t('Default path alias pattern'),
+          'patterndefault' => '',
+          'batch_update_callback' => 'ding_path_alias_library_news_page_pathauto_bulk_update_batch_process',
+          'batch_file' => drupal_get_path('module', 'ding_path_alias') . '/ding_path_alias.pathauto.inc',
+        );
+      }
+      return $settings;
+      break;
+  }
+}

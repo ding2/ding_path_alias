@@ -127,7 +127,7 @@ function ding_path_alias_pathauto($op) {
           'token_type' => 'node',
           'groupheader' => t('Library news page'),
           'patterndescr' => t('Default path alias pattern'),
-          'patterndefault' => '',
+          'patterndefault' => 'library/[node:ding_library_slug]/news',
           'batch_update_callback' => 'ding_path_alias_library_news_page_pathauto_bulk_update_batch_process',
           'batch_file' => drupal_get_path('module', 'ding_path_alias') . '/ding_path_alias.pathauto.inc',
         );
@@ -138,7 +138,7 @@ function ding_path_alias_pathauto($op) {
           'token_type' => 'node',
           'groupheader' => t('Library event page'),
           'patterndescr' => t('Default path alias pattern'),
-          'patterndefault' => '',
+          'patterndefault' => 'library/[node:ding_library_slug]/events',
           'batch_update_callback' => 'ding_path_alias_library_event_page_pathauto_bulk_update_batch_process',
           'batch_file' => drupal_get_path('module', 'ding_path_alias') . '/ding_path_alias.pathauto.inc',
         );
@@ -149,7 +149,7 @@ function ding_path_alias_pathauto($op) {
           'token_type' => 'node',
           'groupheader' => t('About library page'),
           'patterndescr' => t('Default path alias pattern'),
-          'patterndefault' => '',
+          'patterndefault' => 'library/[node:ding_library_slug]/about',
           'batch_update_callback' => 'ding_path_alias_library_about_page_pathauto_bulk_update_batch_process',
           'batch_file' => drupal_get_path('module', 'ding_path_alias') . '/ding_path_alias.pathauto.inc',
         );

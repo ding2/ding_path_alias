@@ -8,7 +8,7 @@
  * Implements hook_enable().
  */
 function ding_path_alias_enable() {
-  // New module weights in core: put devel as the very last in the chain.
+  // New module weights in core: invoke this module later than most others.
   db_update('system')
     ->fields(array(
       'weight' => 1,

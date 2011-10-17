@@ -6,7 +6,7 @@
  */
 
 /**
- * Batch processing callback; Generate aliases for products..
+ * Batch processing callback; Generate aliases for library news pages.
  */
 function ding_path_alias_library_news_page_pathauto_bulk_update_batch_process(&$context) {
   if (!isset($context['sandbox']['current'])) {
@@ -90,7 +90,7 @@ function ding_path_alias_library_news_page_pathauto_update_alias(stdClass $node,
 }
 
 /**
- * Batch processing callback; Generate aliases for products..
+ * Batch processing callback; Generate aliases for library event pages.
  */
 function ding_path_alias_library_event_page_pathauto_bulk_update_batch_process(&$context) {
   if (!isset($context['sandbox']['current'])) {
@@ -174,7 +174,7 @@ function ding_path_alias_library_event_page_pathauto_update_alias(stdClass $node
 }
 
 /**
- * Batch processing callback; Generate aliases for products..
+ * Batch processing callback; Generate aliases for library about pages.
  */
 function ding_path_alias_library_about_page_pathauto_bulk_update_batch_process(&$context) {
   if (!isset($context['sandbox']['current'])) {

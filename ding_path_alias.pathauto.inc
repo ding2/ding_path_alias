@@ -16,6 +16,7 @@ function ding_path_alias_library_news_page_pathauto_bulk_update_batch_process(&$
 
   $query = db_select('node', 'n');
   $query->leftJoin('url_alias', 'ua', "CONCAT(CONCAT('node/', n.nid), '/news') = ua.source");
+  $query->addField('n', 'nid');
   $query->isNull('ua.source');
   $query->condition('n.nid', $context['sandbox']['current'], '>');
   $query->condition('n.type', 'ding_library', '=');

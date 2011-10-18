@@ -158,3 +158,29 @@ function ding_path_alias_pathauto($op) {
       break;
   }
 }
+
+/**
+ * Implements hook_node_insert().
+ */
+function ding_path_alias_node_insert($node) {
+  // Each time a commerce product is created, we create a path alias for it.
+  if ($node->type == 'ding_library') {
+    module_load_include('inc', 'ding_path_alias', 'ding_path_alias.pathauto');
+    ding_path_alias_library_news_page_pathauto_update_alias($node, 'insert');
+    ding_path_alias_library_event_page_pathauto_update_alias($node, 'insert');
+    ding_path_alias_library_about_page_pathauto_update_alias($node, 'insert');
+  }
+}
+
+/**
+ * Implements hook_node_update().
+ */
+function ding_path_alias_node_update($node) {
+  // Need to clean up products in the sitemap, when they are deleted
+  if ($node->type == 'ding_library') {
+    module_load_include('inc', 'ding_path_alias', 'ding_path_alias.pathauto');
+    ding_path_alias_library_news_page_pathauto_update_alias($node, 'update');
+    ding_path_alias_library_event_page_pathauto_update_alias($node, 'update');
+    ding_path_alias_library_about_page_pathauto_update_alias($node, 'update');
+  }
+}

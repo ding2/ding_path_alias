@@ -20,6 +20,27 @@ function ding_path_alias_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_ding_path_alias_library_about_page_ding_library_da_pattern';
+  $strongarm->value = 'bibliotek/[node:ding_library_slug]/om';
+  $export['pathauto_ding_path_alias_library_about_page_ding_library_da_pattern'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_ding_path_alias_library_event_page_ding_library_da_pattern';
+  $strongarm->value = 'bibliotek/[node:ding_library_slug]/arrangementer';
+  $export['pathauto_ding_path_alias_library_event_page_ding_library_da_pattern'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_ding_path_alias_library_news_page_ding_library_da_pattern';
+  $strongarm->value = 'bibliotek/[node:ding_library_slug]/nyheder';
+  $export['pathauto_ding_path_alias_library_news_page_ding_library_da_pattern'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_ignore_words';
   $strongarm->value = 'og,i,jeg,det,at,en,den,til,er,som,paa,de,med,han,af,for,ikke,der,var,mig,sig,men,et,har,om,vi,min,havde,ham,hun,nu,over,da,fra,du,ud,sin,dem,os,op,man,hans,hvor,eller,hvad,skal,selv,her,alle,vil,blev,kunne,ind,naar,vaere,dog,noget,ville,jo,deres,efter,ned,skulle,denne,end,dette,mit,ogsaa,under,have,dig,anden,hende,mine,alt,meget,sit,sine,vor,mod,disse,hvis,din,nogle,hos,blive,mange,ad,bliver,hendes,vaeret,thi,jer,saadan';
   $export['pathauto_ignore_words'] = $strongarm;

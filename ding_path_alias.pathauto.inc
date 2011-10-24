@@ -87,7 +87,13 @@ function ding_path_alias_library_news_page_pathauto_bulk_update_alias_multiple($
 function ding_path_alias_library_news_page_pathauto_update_alias(stdClass $node, $op, array $options = array()) {
   module_load_include('inc', 'pathauto');
   $path = 'node/' . $node->nid . '/news';
-  pathauto_create_alias('ding_path_alias_library_news_page', $op, $path, array('node' => $node));
+
+  // Add language info.
+  $options += array(
+    'language' => isset($node->language) ? $node->language : LANGUAGE_NONE,
+  );
+
+  pathauto_create_alias('ding_path_alias_library_news_page', $op, $path, array('node' => $node), 'ding_library', $options['language']);
 }
 
 /**
@@ -171,7 +177,13 @@ function ding_path_alias_library_event_page_pathauto_bulk_update_alias_multiple(
 function ding_path_alias_library_event_page_pathauto_update_alias(stdClass $node, $op, array $options = array()) {
   module_load_include('inc', 'pathauto');
   $path = 'node/' . $node->nid . '/events';
-  pathauto_create_alias('ding_path_alias_library_event_page', $op, $path, array('node' => $node));
+
+  // Add language info.
+  $options += array(
+    'language' => isset($node->language) ? $node->language : LANGUAGE_NONE,
+  );
+
+  pathauto_create_alias('ding_path_alias_library_event_page', $op, $path, array('node' => $node), 'ding_library', $options['language']);
 }
 
 /**
@@ -256,5 +268,11 @@ function ding_path_alias_library_about_page_pathauto_bulk_update_alias_multiple(
 function ding_path_alias_library_about_page_pathauto_update_alias(stdClass $node, $op, array $options = array()) {
   module_load_include('inc', 'pathauto');
   $path = 'node/' . $node->nid . '/about';
-  pathauto_create_alias('ding_path_alias_library_about_page', $op, $path, array('node' => $node));
+
+  // Add language info.
+  $options += array(
+    'language' => isset($node->language) ? $node->language : LANGUAGE_NONE,
+  );
+
+  pathauto_create_alias('ding_path_alias_library_about_page', $op, $path, array('node' => $node), 'ding_library', $options['language']);
 }

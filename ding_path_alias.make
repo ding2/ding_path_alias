@@ -16,4 +16,4 @@ projects[token][version] = 1.0-beta6
 
 projects[strongarm][type] = module
 projects[strongarm][subdir] = contrib
-projects[strongarm][version] = 2.0-beta3
+projects[strongarm][version] = 2.0-beta4

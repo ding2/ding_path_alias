@@ -43,15 +43,6 @@ function ding_path_alias_token_info() {
 }
 
 /**
- * Implements hook_token_info_alter().
- */
-function ding_path_alias_token_info_alter(&$info) {
-  $info['tokens']['node']['ding_event_library']['type'] = 'og-field';
-  $info['tokens']['node']['ding_news_library']['type'] = 'og-field';
-  return $info;
-}
-
-/**
  * Implements hook_tokens().
  */
 function ding_path_alias_tokens($type, $tokens, array $data = array(), array $options = array()) {

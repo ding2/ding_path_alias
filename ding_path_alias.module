@@ -43,42 +43,6 @@ function ding_path_alias_token_info() {
 }
 
 /**
- * Implements hook_tokens().
- */
-function ding_path_alias_tokens($type, $tokens, array $data = array(), array $options = array()) {
-  $replacements = array();
-  if ($type == 'node' && !empty($data['node'])) {
-    $node = $data['node'];
-    $node_wrapper = entity_metadata_wrapper('node', $node);
-    if ($node->type == 'ding_event' && isset($node->ding_event_library['und'])) {
-      $tokens = token_find_with_prefix($tokens, 'ding_event_library');
-      $gid = $node->ding_event_library['und'][0]['gid'];
-    }
-    elseif ($node->type == 'ding_news' && isset($node->ding_news_library['und'])) {
-      $tokens = token_find_with_prefix($tokens, 'ding_news_library');
-      $gid = $node->ding_news_library['und'][0]['gid'];
-    }
-
-    // Add gid if needed.
-    foreach ($tokens as $name => $original) {
-      if ($name == 'gid') {
-        $replacements[$original] = $gid;
-      }
-    }
-
-    // Add node tokens.
-    if ($node_tokens = token_find_with_prefix($tokens, 'node')) {
-      $group = og_load($gid);
-      if ($group->entity_type == 'node') {
-        $group_node = node_load($group->etid);
-        $replacements += token_generate('node', $node_tokens, array('node' => $group_node), $options);
-      }
-    }
-  }
-  return $replacements;
-}
-
-/**
  * Implements hook_path_alias_types().
  *
  * Used primarily by the bulk delete form.

@@ -13,7 +13,7 @@ projects[pathauto][patch][] = http://drupal.org/files/1299460.patch
 
 projects[transliteration][type] = module
 projects[transliteration][subdir] = contrib
-projects[transliteration][version] = 3.0
+projects[transliteration][version] = "3.1"
 
 projects[token][type] = module
 projects[token][subdir] = contrib

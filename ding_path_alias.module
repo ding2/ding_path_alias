@@ -83,7 +83,7 @@ function ding_path_alias_pathauto($op) {
         $languages = array(LANGUAGE_NONE => t('language neutral')) + locale_language_list('name');
       }
       if (module_exists('ding_library') && module_exists('ding_news')) {
-         $build = array(
+        $build = array(
           'module' => 'ding_path_alias_library_news_page',
           'token_type' => 'node',
           'groupheader' => t('Library news page'),
@@ -94,7 +94,7 @@ function ding_path_alias_pathauto($op) {
         );
         if (count($languages) && variable_get('language_content_type_ding_library', 0)) {
           foreach ($languages as $lang_code => $lang_name) {
-            $build['patternitems']['ding_library_' . $lang_code] = t('News pages for library nodes in @language ', array('@language' => $lang_name));
+            $build['patternitems']['ding_library_' . $lang_code] = t('News pages for library nodes in @language', array('@language' => $lang_name));
           }
         }
         $settings['library_news_page'] = (object) $build;

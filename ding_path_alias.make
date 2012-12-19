@@ -17,7 +17,7 @@ projects[transliteration][version] = "3.1"
 
 projects[token][type] = module
 projects[token][subdir] = contrib
-projects[token][version] = "1.2"
+projects[token][version] = "1.4"
 
 projects[strongarm][type] = module
 projects[strongarm][subdir] = contrib

@@ -11,14 +11,11 @@ projects[pathauto][download][url] = http://git.drupal.org/project/pathauto.git
 projects[pathauto][download][tag] = 7.x-1.0-rc2
 projects[pathauto][patch][] = http://drupal.org/files/1299460.patch
 
-projects[transliteration][type] = module
 projects[transliteration][subdir] = contrib
 projects[transliteration][version] = "3.1"
 
-projects[token][type] = module
 projects[token][subdir] = contrib
 projects[token][version] = "1.4"
 
-projects[strongarm][type] = module
 projects[strongarm][subdir] = contrib
 projects[strongarm][version] = "2.0"

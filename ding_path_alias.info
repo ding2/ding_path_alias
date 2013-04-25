@@ -5,6 +5,7 @@ package = Ding!
 php = 5.2.4
 version = 7.x-0.7
 project = ding_path_alias
+dependencies[] = ctools
 dependencies[] = pathauto
 dependencies[] = strongarm
 dependencies[] = token

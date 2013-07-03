@@ -4,6 +4,8 @@
  * Create tokens and integrate with pathauto alias generation.
  */
 
+include_once 'ding_path_alias.features.inc';
+
 /**
  * Implements hook_enable().
  */
